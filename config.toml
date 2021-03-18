@@ -1,7 +1,7 @@
 baseURL = "https://example.com"
 languageCode = "en"
 DefaultContentLanguage = "en"
-title = "Adam Mitha's Personal Website"
+title = ""
 theme = "anatole"
 summarylength = 10
 enableEmoji = true
@@ -23,7 +23,7 @@ title = "Hi, I'm Adam!"
 author = "Adam Mitha"
 #copyright = "2020-2021"
 description = "Software Developer"
-profilePicture = "images/profile.jpg"
+profilePicture = "images/profile.jpeg"
 keywords = ""
 favicon = "favicons/"
 # example ["css/custom.css"]
@@ -55,22 +55,22 @@ use = "katex"  # options: "katex", "mathjax". default is "katex".
 [[params.socialIcons]]
 icon = "fab fa-linkedin"
 title = "Linkedin"
-url = "https://de.linkedin.com/"
+url = "https://www.linkedin.com/in/adam-mitha-94286092/"
 
 [[params.socialIcons]]
 icon = "fab fa-github"
 title = "GitHub"
-url = "https://github.com/lxndrblz/anatole/"
+url = "https://github.com/adammitha"
 
 [[params.socialIcons]]
-icon = "fab fa-instagram"
-title = "instagram"
-url = "https://www.instagram.com/"
+icon = "fab fa-twitter"
+title = "Twitter"
+url = "https://twitter.com/adam_mitha"
 
 [[params.socialIcons]]
 icon = "fas fa-envelope"
 title = "e-mail"
-url = "mailto:mail@alexbilz.com"
+url = "mailto:adam.mitha@gmail.com"
 
 ## Menu items
 
@@ -93,9 +93,3 @@ url = "mailto:mail@alexbilz.com"
   weight = 300
   identifier = "about"
   url = "/about/"
-
-  [[menu.main]]
-  name = "Contact"
-  weight = 400
-  identifier = "contact"
-  url = "/contact/"
