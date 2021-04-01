@@ -1,7 +1,7 @@
 +++
 author = "Adam Mitha"
 title = "Tackling Backtracking Search"
-date = "2021-03-11"
+date = "2021-03-31"
 description = "An approach to solving backtracking search problems in Go."
 tags = [
     "Go",
