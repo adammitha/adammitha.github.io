@@ -14,3 +14,8 @@ series = [
 ]
 
 +++
+
+- Technical expertise
+- Leadership and mentoring
+- Communication/collaboration
+- Continuing professional development and lifelong learning
