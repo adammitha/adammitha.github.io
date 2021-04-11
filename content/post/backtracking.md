@@ -71,7 +71,7 @@ func NewBoard(n int) *Board {
 
 The empty board we generated in step 1 will be our starting point – the root node of our search space. To generate candidate child nodes, fill each empty square with a queen and then verify if the board that we've produced is valid. If we start with an empty 2 x 2 board, as our root, there are four valid child nodes that we can produce:
 
-<<Image goes here>>
+{{< figure src="/images/child-nodes.png" >}}
 
 Once we've generated the child nodes and eliminated any invalid boards, we will visit each one of them in turn and check if any of them represent a solved board – i.e. a board with N queens. Since any invalid boards have already been eliminated from the tree, if we encounter a board with N queens it's guaranteed to be a valid solution. This process can be repeated recursively until either a solution is found, or no valid child nodes can be generated. In our 2 x 2 example above, there is no valid arrangement of 2 queens such that they cannot attack each other, so the search would fail.
 
