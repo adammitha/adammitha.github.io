@@ -16,7 +16,7 @@ series = [
 +++
 
 ## Introduction
-Anyone's who's taken CPSC 110 at UBC probably experiences a sense of dread when they hear about search problems. This is not an unreasonable response — backtracking search problems are among the hardest that you'll encounter on interview practice sites like [Leetcode](http://www.leetcode.com), so it seems almost cruel to expect first year computer science students (many of whom have never programmed in their life) to be able to tackle them. However, like with any other problem that you'll encounter in 110 (or in software engineering generally), having a structured approach to backtracking can help turn a seemingly gargantuan task into one that's quite digestible. There's only one way to eat an elephant — one bite at a time.
+Anyone who's taken CPSC 110 at UBC probably experiences a sense of dread when they hear about search problems. This is not an unreasonable response — backtracking search problems are among the hardest that you'll encounter on interview practice sites like [Leetcode](http://www.leetcode.com), so it seems almost cruel to expect first year computer science students (many of whom have never programmed in their life) to be able to tackle them. However, like with any other problem that you'll encounter in 110 (or in software engineering generally), having a structured approach to backtracking can help turn a seemingly gargantuan task into one that's quite digestible. There's only one way to eat an elephant — one bite at a time.
 
 ### Premise
 
@@ -39,9 +39,9 @@ While this may seem intimidating at first, as you'll see a structured approach w
 I'll be using [Go](https://golang.org/) to develop my solution to this problem, but I won't be using any third-party packages so you should be able to reproduce my solution in your language of choice.
 
 ## Modelling the search state
-The first step in any backtracking search problem is to determine what we are searching for, and how to best represent that in a data structure. In other words, what will represent the 'node' in the tree of solutions we are searching through.
+The first step in any backtracking search problem is to determine what we are searching for, and how to best represent that in a data structure. This will represent the 'node' in the tree of solutions we are searching through.
 
-In the context of the N-queens problem, we are looking for a chess board that contains N-queens that cannot attack each other. In short, we are searching for a chess board, so that's will be our search state. A chess board is essentially a grid, which can be represented using a 2-dimensional array. We also need a way to represent which squares in the board contain a queen. This can be done using a boolean value — `true` means a queen is in that square, and `false` means it's empty.
+In the context of the N-queens problem, we are looking for a chess board that contains N-queens that cannot attack each other. A chess board is essentially a grid, which can be represented using a 2-dimensional array. We also need a way to represent which squares in the board contain a queen. This can be done using a boolean value — `true` means a queen is in that square, and `false` means it's empty.
 
 A simple function can be used to generate an empty board of size N x N.
 
@@ -110,7 +110,7 @@ func (b *Board) nextBoards() []*Board {
 
 ### Validating boards
 
-Before adding newly generated boards to the search space, we need to make sure that they're valid. This effectively means looping through each queen in the board and making sure that it doesn't attack any other queen on the board. We can eliminate queens with the same row or column index easily, and we can check diagonals by checking the absolute value of the difference in row and column indices. If both the row and column deltas are the same, the two queen's are on a diagonal.
+Before adding newly generated boards to the search space, we need to make sure that they're valid. This effectively means looping through each queen in the board and making sure that it doesn't attack any other queen on the board. We can eliminate queens with the same row or column index easily, and we can check diagonals by checking the absolute value of the difference in row and column indices. If both the row and column deltas are the same, the two queens are on a diagonal.
 
 ```go
 // valid returns true if all queens in the board cannot attack any other queen
@@ -167,7 +167,7 @@ At a high level, this function consumes a board and will do the following:
 
 1. Check the board to see if it's solved. If it is, return it. If not, proceed to step 2.
 2. Generate child nodes
-3. Recursively each child node one by one, returning the result if a solution is found
+3. Recursively search each child node one by one, returning the result if a solution is found
 4. If a solution cannot be found, return an error
 
 ```go
@@ -193,4 +193,4 @@ func search(board *Board) *Board, err {
 
 ## Conclusion
 
-Hopefully this post has helped you develop some intuition around search problems and given you a framework for approaching them in the future. I would encourage you to try to solve this problem from scratch without referencing any of my code to ensure that you've really grasped the concepts. If you're interested in checking out some other search problems, [Peter Norvig](https://norvig.com/sudoku.html) has an excellent tutorial on building a Sudoku solver. If you have any suggestions for how to make this post better, feel free to reach out to me via [email](mailto:adam.mitha@gmail.com) or [Twitter](https://twitter.com/adam_mitha). Happy searching!
+Hopefully this post has helped you develop some intuition around search problems and given you a framework for approaching them in the future. You can check out a working implementation of the N-Queens solver we developed from my [Github](https://github.com/adammitha/n-queens) if you want to see it in action. I would encourage you to try to solve this problem from scratch without referencing any of my code to ensure that you've really grasped the concepts. If you're interested in checking out some other search problems, [Peter Norvig](https://norvig.com/sudoku.html) has an excellent tutorial on building a Sudoku solver. If you have any suggestions for how to make this post better, feel free to reach out to me via [email](mailto:adam.mitha@gmail.com) or [Twitter](https://twitter.com/adam_mitha). Happy searching!
